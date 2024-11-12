@@ -1,0 +1,392 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+            /*ТЕЛО*/
+body {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    background: radial-gradient(ellipse at center, rgba(79, 133, 187, 1) 0%, rgba(79, 133, 187, 1) 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */;
+}
+            /*ШАПКА*/
+header {
+    /* background: linear-gradient(-45deg, #2F2F2F, #000000); */
+    position: relative;
+    background: #000000;
+    padding-bottom: 80px;
+    padding-top: 80px;
+    border-bottom-right-radius: 100px;
+    margin-bottom: 80px;
+}
+          /* *******МЕНЮ****** */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(red, green, blue, 0.7);
+    z-index: 8;
+}
+.dws-menu>ul {
+    display: flex;
+    justify-content: center;
+    column-gap: 100px;
+    flex-wrap: wrap;
+}
+.dws-menu>ul li a {
+    display: block;
+    color: #C9CC9D;
+    font-weight: 500;
+    text-shadow: #FFFFFF;
+    padding: 15px 15px 15px 40px;
+    /* плавное исчезание */
+    transition: all 0.4s ease;
+}
+.dws-menu>ul li {
+    position: relative;
+}
+.dws-menu>ul li>a i.fa {
+    position: absolute;
+    left: 9px;
+    font-size: 28px;   
+}
+            /* ФОКУС для МАШИННОГО ЧТЕНИЯ(TAB) */
+a:focus {
+    outline: none;
+    background-color: yellow;
+}
+.dws-menu li:hover>a,         /*УДЕРЖАНИЕ ЭФФЕКТА */
+.dws-menu li a:hover {
+    font-weight: bold;
+    /* плавное появление */
+    transition: all 0.4s ease;
+}
+li:focus-within > .ws-menu,     /*ФОКУС для СКРЫТОГО МЕНЮ */
+li:hover > .ws-menu {
+    clip: auto;
+    width: auto;
+    height: auto;
+    margin: 0;
+}
+                /* ПОДМЕНЮ */
+.dws-menu li ul {
+    position: absolute;
+    min-width: 150px;
+    /* display: none; */
+    /* ЗАМЕНА НА: */
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+}
+.dws-menu li>ul li {
+    margin-bottom: 3px;
+    left: 80px;   
+}
+.dws-menu li>ul li a {
+    color: #000000;  
+    box-shadow: 1px 5px 10px -5px black;
+    border-radius: 5px;
+}
+.dws-menu li:hover>ul {
+    display: block;   
+}
+            /* АНИМЦИЯ МЕНЮ */
+.link {
+    position: relative;
+    text-decoration: none;
+    color: #C9CC9D;
+    font-size: 24px;
+    font-weight: bold;
+}
+.link::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 5px;
+    width: 0;
+    height: 3px;
+    background-color: #C9CC9D;
+    transition: width 0.4s ease, left 0.4s ease;
+}
+.link:hover::after {
+    width: 100%;
+    left: 0;
+}
+          /* АНИМЦИЯ ПОДМЕНЮ */
+.ws-menu .link {
+    position: relative;
+    text-decoration: none;
+    color: #C9CC9D;
+    font-size: 24px;
+    font-weight: 500;
+    /* opacity: 0.65; */
+}
+.ws-menu .link::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 5px;
+    width: 0;
+    height: 3px;
+    background-color: #333;   
+    transition: width 0.4s ease, left 0.4s ease;
+}
+.ws-menu li a:hover {
+    color: #333;
+    font-weight: bold;
+    background: linear-gradient(to right, rgba(178, 225, 255, 1) 0%, rgba(102, 182, 252, 1) 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */;
+    opacity: 0.95;
+}
+.ws-menu .link:hover::after {
+    width: 80%;
+    left: 20px;
+}
+
+  
+        /* ШАПКА-КОНТЕНТ */
+header .container{
+    position: relative;
+    z-index: 7;
+}
+.header-video{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-bottom-right-radius: 100px;
+    opacity: 0.5;
+}
+            /*БАЗА*/
+.container {
+    max-width: 1200px;
+    padding: 0px 15px;
+    margin: 200px auto;
+}
+            /*Блок 1*/
+.header-row {
+    display: flex;
+    column-gap: 60px;
+    align-items: center;
+}
+            /*Картинка*/
+.header-row img {
+    border-radius: 60px;
+}
+            /*Текст*/
+.header-text{
+    color: #FFFFFF;
+}
+h1 {
+    margin-bottom: 20px;
+    font-size: 60px;
+    font-weight: 700;   
+}
+.header-text p {
+    font-size: 26px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+            /*Кнопки*/
+.header-btns{
+    display: flex;
+    column-gap: 20px;
+    flex-wrap: wrap;
+}
+.header-btns .btn {
+    height: 48px;
+    line-height: 1;
+    padding: 15px 25px 0px 25px;
+    font-weight: 500;
+    font-size: 18px;
+    border-radius: 8px;
+    /* background: #000000; */
+    border: 1px solid #3b3b3b;
+    color: #C9CC9D;
+    transition: all 1s;
+}
+.btn_outline{
+    height: 48px;
+    line-height: 1;
+    padding: 15px 25px 0px 25px;
+    font-weight: 500;
+    font-size: 18px;
+    border: 1px solid #3b3b3b;
+    border-radius: 8px;
+    color: #C9CC9D;
+    transition: all 1s;
+}
+            /*Изменение*/
+.btn:hover {
+    background: #178cf1;
+    color: #FFFFFF;
+    transition: 1s;
+}
+.btn_outline:hover {
+    border-color: #178cf1;
+    color: #FFFFFF;
+    transition: 1s;
+}
+
+               /*ПОРТФОЛИО */
+.containers{
+    max-width: 1200px;
+    /* display: flex; */
+    align-items: center;
+    margin: 200px auto;
+}
+.containers h2{
+    margin-bottom: 20px;
+    font-size: 52px;
+    font-weight: 700;
+    text-align: center;
+}
+.projects{
+    padding: 0 15px;
+    margin: 0 auto;
+}
+.containers img{
+    border-radius: 30px;
+    transition: opacity 0.2s ease-in;
+    margin-top: 30px;   
+}
+.containers img:hover{
+    opacity: 0.8;
+}
+.containers a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto 0px;
+    color: #000000;
+    font-size: 22px;
+    text-decoration: underline;
+    transition: all 0.5s;
+}
+.containers a:hover{
+    text-decoration: underline;
+    font-weight: 600;
+    /* color: #dc143c; */
+    transition: 0.5s;
+}
+
+           /* КОНТАКТЫ */
+.contacts{
+    background: linear-gradient(45deg, #2F2F2F, #000000);
+    padding-bottom: 80px;
+    padding-top: 80px;
+    border-top-left-radius:  100px;
+    margin-top: 55px;
+}
+ .contacts h3{
+    text-align: center;
+    font-size: 52px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 80px;
+}
+.massage{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    font-size: 20px;
+    font-weight: 300;
+    flex-wrap: wrap;
+}
+.massage img{
+    width: 50px;
+    height: 50px;
+}
+.massage .telega{
+    display: flex;
+    align-items: center;
+    background: none;
+    border: 0.01px solid #808080;
+    border-radius: 20px;
+    padding: 43px 50.3531px;
+    transition: all 0.5s;
+}
+.massage .whats{
+    display: flex;
+    align-items: center;
+    background: #101010;
+    border: 0.01px solid #808080;
+    border-radius: 20px;
+    padding: 43px 43px;
+    transition: all 0.5s;
+}
+.massage .vcont{
+    display: flex;
+    align-items: center;
+    background: none;
+    border: 0.01px solid #808080;
+    border-radius: 20px;
+    padding: 43px 50.3531px;
+    transition: all 0.5s;
+}
+.massage a{
+    padding-left: 10px;
+    color: #FFFFFF;
+}
+.massage .telega a:hover{
+    color: #039be5;
+    transition: 0.5s;
+}
+.massage .telega:hover{
+    border: 0.1px solid #039be5;  
+}
+
+.massage .whats a:hover {
+    color: #55CD6C;
+    transition: 0.5s;
+}
+.massage .whats:hover img{
+    border: 0.1px none #55CD6C;
+    width: 75px;
+    height: 75px;
+    transition: 1s;
+}
+.massage .vcont:hover{
+    background: #4C87CF;
+    transition: 0.5s;
+    text-decoration: underline 1px #FFFFFF;
+}
+.massage .vcont img:hover{
+    width: 75px;
+    height: 75px;
+    transition: 1s;
+}
+         /* ПОДВАЛ */
+footer{   
+    background: #000000;
+    color: #5D5D5D;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+footer h4{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+footer .poddon{
+    padding-top: 12px;
+    color: #5886A8;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+footer img{
+    width: 25px;
+    height: 25px;
+}
